@@ -1,25 +1,66 @@
-.earth {
-    width: 500px;
-    padding: 100px;
-    position: relative;
-    z-index: 1;
+body {
+    display: inline-block;
 }
+@keyframes changecolorcircle {
+    from {fill: green; stroke: blue;}
+    to {fill: white; stroke: black;}
+  }
 
-.moon {
-    position: absolute;
-    width: 150px;
-    top: 300px;
-    left: 250px;
-    animation: linear 10s movement infinite;
-    z-index: 0;
-}
+  @keyframes changecolorrect {
+    from {fill: red; stroke: yellow;}
+    to {fill: white; stroke: black;}
+  }
 
-@keyframes movement{
-    0%{width: 75px;}
-    24%{z-index: 0;}
-    25%{left:600px; top:150px; z-index: 2;}
-    50%{width: 150px;}
-    74%{z-index: 2;}
-    75%{top: 550px; left: 0px; z-index: 0;}
-    100%{width: 75px; transform: rotate(360deg);}
+  @keyframes changecolorsquare {
+    from {fill: blue; stroke: green;}
+    to {fill: white; stroke: black;}
+  }
+
+  @keyframes changecolorellipse {
+    from {fill: yellow; stroke: red;}
+    to {fill: white; stroke: black;}
+  }
+
+  @keyframes pulse {
+    0% {
+      fill: #001F3F;
+    }
+    100% {
+      fill: #FF4136;
+    }
+  }
+  .circle {
+    fill: green;
+    stroke: blue;
+    stroke-width: 5px;
+    animation: changecolorcircle; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  .square {
+    fill: blue;
+    stroke: green;
+    stroke-width: 5px;
+    animation: changecolorsquare; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  .ellipse {
+    fill:yellow;
+    stroke: red;
+    stroke-width: 5px;
+    animation: changecolorellipse;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    }
+.rect {
+    fill:red;
+    stroke: yellow;
+    stroke-width: 5px;
+    animation: changecolorrect; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
+.anchor {
+    animation: pulse 5s infinite;
+  }
